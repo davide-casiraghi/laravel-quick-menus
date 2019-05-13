@@ -33,7 +33,7 @@ class MenuItemController extends Controller
         $selectedMenuName = Menu::find($id)->name;
         $menuItemsTree = MenuItem::getItemsTree($id);
 
-        return view('menuItems.index', compact('menuItemsTree'))
+        return view('laravel-quick-menus::menuItems.index', compact('menuItemsTree'))
                     ->with('selectedMenuId', $id)
                     ->with('selectedMenuName', $selectedMenuName)
                     ->with('countriesAvailableForTranslations', $countriesAvailableForTranslations);
@@ -61,7 +61,7 @@ class MenuItemController extends Controller
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 
-        return view('menuItems.create')
+        return view('laravel-quick-menus::menuItems.create')
             ->with('menuItems', $menuItems)
             ->with('menu', $menu)
             ->with('menuItemsTree', $menuItemsTree)
@@ -107,7 +107,7 @@ class MenuItemController extends Controller
      */
     public function show(MenuItem $menuItem)
     {
-        return view('menuItems.show', compact('menuItem'));
+        return view('laravel-quick-menus::menuItems.show', compact('menuItem'));
     }
 
     /***************************************************************************/
@@ -133,7 +133,7 @@ class MenuItemController extends Controller
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 
-        return view('menuItems.edit', compact('menuItem'))
+        return view('laravel-quick-menus::menuItems.edit', compact('menuItem'))
                     ->with('menuItems', $menuItems)
                     ->with('menuItemsSameMenuAndLevel', $menuItemsSameMenuAndLevel)
                     ->with('menuItemsTree', $menuItemsTree)

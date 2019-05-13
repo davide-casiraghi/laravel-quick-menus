@@ -25,7 +25,7 @@ class MenuController extends Controller
     {
         $menus = Menu::orderBy('name')->get();
 
-        return view('menus.index', compact('menus'));
+        return view('laravel-quick-menus::menus.index', compact('menus'));
     }
 
     /***************************************************************************/
@@ -37,7 +37,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        return view('laravel-quick-menus::menus.create');
     }
 
     /***************************************************************************/
@@ -75,7 +75,7 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        return view('menus.show', compact('menu'));
+        return view('laravel-quick-menus::menus.show', compact('menu'));
     }
 
     /***************************************************************************/
@@ -88,7 +88,7 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        return view('menus.edit', compact('menu'));
+        return view('laravel-quick-menus::menus.edit', compact('menu'));
     }
 
     /***************************************************************************/

@@ -26,7 +26,7 @@ class MenuItemTranslationController extends Controller
     {
         $selectedLocaleName = $this->getSelectedLocaleName($languageCode);
 
-        return view('menuItemTranslations.create')
+        return view('laravel-quick-menus::menuItemTranslations.create')
                 ->with('menuItemId', $menuItemId)
                 ->with('selectedMenuId', $menuId)
                 ->with('languageCode', $languageCode)
@@ -50,7 +50,7 @@ class MenuItemTranslationController extends Controller
 
         $selectedLocaleName = $this->getSelectedLocaleName($languageCode);
 
-        return view('menuItemTranslations.edit', compact('menuItemTranslation'))
+        return view('laravel-quick-menus::menuItemTranslations.edit', compact('menuItemTranslation'))
                     ->with('menuItemId', $menuItemId)
                     ->with('selectedMenuId', $menuId)
                     ->with('languageCode', $languageCode)
