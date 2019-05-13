@@ -47,7 +47,7 @@
                 "DavideCasiraghi\\LaravelQuickMenus\\LaravelQuickMenusServiceProvider"
             ],
             "aliases": {
-                "LaravelQuickMenus": "DavideCasiraghi\\LaravelQuickMenus\\LaravelQuickMenusFacade"
+                "LaravelQuickMenus": "DavideCasiraghi\\LaravelQuickMenus\\LaravelQuickMenus"
             }
         }
     }

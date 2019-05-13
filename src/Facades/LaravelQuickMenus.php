@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \DavideCasiraghi\LaravelQuickMenus\Skeleton\SkeletonClass
  */
-class LaravelQuickMenusFacade extends Facade
+class LaravelQuickMenus extends Facade
 {
     /**
      * Get the registered name of the component.
