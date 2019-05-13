@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace DavideCasiraghi\LaravelSmartBlog\Models;
 
 use Illuminate\Support\Facades\Auth;
 use Dimsav\Translatable\Translatable;
