@@ -86,14 +86,10 @@ class MenuItemController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-
-        // Set the default language to edit the post for the admin to English (to avoid bug with null name)
-        App::setLocale('en');
-
+        
         $menuItem = new MenuItem();
         $this->saveOnDb($request, $menuItem);
-        //dd($request->menu_id);
-
+        
         return redirect()->route('menuItemsIndex', ['id' => $request->menu_id])
                         ->with('success', __('messages.menu_item_added_successfully'));
     }
@@ -194,7 +190,7 @@ class MenuItemController extends Controller
     public function saveOnDb($request, $menuItem)
     {
         $menuItem->translateOrNew('en')->name = $request->get('name');
-        $menuItem->translateOrNew('en')->compact_name = Str::slug($request->get('name'), '-');
+        $menuItem->translateOrNew('en')->slug = Str::slug($request->get('name'), '-');
         if (! $request->get('parent_item_id')) {
             $menuItem->parent_item_id = 0;
         } else {
@@ -203,7 +199,7 @@ class MenuItemController extends Controller
 
         $menuItem->url = $request->get('url');
         $menuItem->font_awesome_class = $request->get('font_awesome_class');
-        $menuItem->hide_name = ($request->hide_name == 'on') ? 1 : 0;
+        $menuItem->hide_name = filter_var($request->hide_name, FILTER_VALIDATE_BOOLEAN);
         $menuItem->route = $request->get('route');
         $menuItem->type = $request->get('type');
         $menuItem->menu_id = $request->get('menu_id');
@@ -214,7 +210,7 @@ class MenuItemController extends Controller
                 $this->updateOrder($menuItem->menu_id, $menuItem->parent_item_id, $menuItem->id, $request->get('order'));
             }
         }
-
+        
         $menuItem->save();
     }
 

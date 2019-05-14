@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 
+use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
+
 class MenuItemControllerTest extends TestCase
 {
     use WithFaker;
@@ -55,14 +57,23 @@ class MenuItemControllerTest extends TestCase
             ->assertStatus(200);
     }
 
-    /* @test */
-    /*public function it_stores_a_valid_menu_item()
+    /** @test */
+    public function it_stores_a_valid_menu_item()
     {
         $this->authenticateAsAdmin();
 
+        $menu = factory(Menu::class)->create();
         $data = [
-            'name' => 'test title',
-            'slug' => 'test body',
+            'name' => "test name",
+            'slug' => "test-name",
+            'parent_item_id' => null,
+            'url' => null,
+            'font_awesome_class' => null,
+            'route' => null,
+            'type' => null,
+            'menu_id' => 1,
+            'order' => 1,
+            'hide_name' => 0,
         ];
 
         $response = $this
@@ -71,7 +82,7 @@ class MenuItemControllerTest extends TestCase
 
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'en']);
         $response->assertViewIs('laravel-quick-menus::menuItems.index');
-    }*/
+    }
 
     /* @test */
     /*public function it_does_not_store_invalid_menu_item()
