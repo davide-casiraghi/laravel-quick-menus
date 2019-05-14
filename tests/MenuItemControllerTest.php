@@ -107,7 +107,7 @@ class MenuItemControllerTest extends TestCase
                  ->assertStatus(200);
     }*/
 
-    /* @test */
+    /** @test */
     public function it_displays_the_menu_item_edit_page()
     {
         $this->authenticateAsAdmin();
@@ -127,7 +127,7 @@ class MenuItemControllerTest extends TestCase
                  ->assertStatus(200);
     }
 
-    /* @test */
+    /** @test */
     /*public function it_updates_valid_menu_item()
     {
         $this->authenticateAsAdmin();
@@ -154,14 +154,14 @@ class MenuItemControllerTest extends TestCase
         $response->assertSessionHasErrors();
     }*/
 
-    /* @test */
-    /*public function it_deletes_menu_items()
+    /** @test */
+    public function it_deletes_menu_items()
     {
         $this->authenticateAsAdmin();
 
         $menuItem = factory(MenuItem::class)->create();
 
         $response = $this->delete('/menuItems/'.$menuItem->id);
-        $response->assertRedirect('/menuItems');
-    }*/
+        $response->assertRedirect('/menuItems/index/1');
+    }
 }
