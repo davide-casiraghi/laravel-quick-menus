@@ -107,7 +107,7 @@ class MenuItemTranslationController extends Controller
 
         $menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
 
-        $mi_t = array();
+        $mi_t = [];
         $mi_t['name'] = $request->get('name');
         $mi_t['slug'] = Str::slug($request->get('name'), '-');
 
