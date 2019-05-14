@@ -46,13 +46,23 @@ class MenuItemControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_displays_the_menu_item_create_page()
+    public function it_displays_the_menu_item_create_page()
     {
         $this->authenticateAsAdmin();
-        $this->get('menuItems/create')
-            ->assertViewIs('laravel-quick-menus::menuItems.create')
-            ->assertStatus(200);
-    }*/
+        $menu = factory(Menu::class)->create();
+        
+        
+        $request = new \Illuminate\Http\Request();
+        $request->replace([
+              'menuId' => $menu->id,
+          ]);
+        
+        $this->get('menuItems/create', [$request])->dump();
+        
+        //$this->get('menuItems/create')->dump();
+            //->assertViewIs('laravel-quick-menus::menuItems.create')
+            //->assertStatus(200);
+    }
 
     /** @test */
     /*public function it_stores_a_valid_menu_item()

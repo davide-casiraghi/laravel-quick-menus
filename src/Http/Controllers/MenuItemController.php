@@ -59,7 +59,7 @@ class MenuItemController extends Controller
                 return $route->action['as'];
             }
         }, (array) Route::getRoutes()->getIterator());
-
+dd($request);
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 
