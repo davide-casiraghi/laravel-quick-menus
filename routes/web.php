@@ -16,5 +16,4 @@
         Route::post('/menuItemTranslations/store', 'MenuItemTranslationController@store')->name('menuItemTranslations.store');
         Route::put('/menuItemTranslations/update', 'MenuItemTranslationController@update')->name('menuItemTranslations.update');
         Route::delete('/menuItemTranslations/destroy/{menuItemTranslationId}/{selectedMenuId}', 'MenuItemTranslationController@destroy')->name('menuItemTranslations.destroy');
-
     });

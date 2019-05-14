@@ -4,8 +4,8 @@ namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
 use Validator;
 use Illuminate\Support\Str;
-use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
 use Illuminate\Http\Request;
+use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
 
 class MenuItemTranslationController extends Controller
 {

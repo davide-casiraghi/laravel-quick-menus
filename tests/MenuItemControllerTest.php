@@ -2,7 +2,6 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
@@ -45,26 +44,26 @@ class MenuItemControllerTest extends TestCase
             ->assertStatus(200);
     }
 
-    /** @test */
+    /* @test */
     /*public function it_displays_the_menu_item_create_page()
     {
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
-        
-        
+
+
         $request = new \Illuminate\Http\Request();
         $request->replace([
               'menuId' => $menu->id,
           ]);
-        
+
         $this->get('menuItems/create', [$request])->dump();
-        
+
         //$this->get('menuItems/create')->dump();
             //->assertViewIs('laravel-quick-menus::menuItems.create')
             //->assertStatus(200);
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_stores_a_valid_menu_item()
     {
         $this->authenticateAsAdmin();
@@ -82,7 +81,7 @@ class MenuItemControllerTest extends TestCase
         $response->assertViewIs('laravel-quick-menus::menuItems.index');
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_does_not_store_invalid_menu_item()
     {
         $this->authenticateAsAdmin();
@@ -91,7 +90,7 @@ class MenuItemControllerTest extends TestCase
         $this->assertNull(MenuItem::first());
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_displays_the_menu_item_show_page()
     {
         $this->authenticate();
@@ -102,7 +101,7 @@ class MenuItemControllerTest extends TestCase
                  ->assertStatus(200);
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_displays_the_menu_item_edit_page()
     {
         $this->authenticateAsAdmin();
@@ -113,7 +112,7 @@ class MenuItemControllerTest extends TestCase
                  ->assertStatus(200);
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_updates_valid_menu_item()
     {
         $this->authenticateAsAdmin();
@@ -130,7 +129,7 @@ class MenuItemControllerTest extends TestCase
                  ->assertStatus(200);
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_does_not_update_invalid_menu_item()
     {
         $this->authenticateAsAdmin();
@@ -140,7 +139,7 @@ class MenuItemControllerTest extends TestCase
         $response->assertSessionHasErrors();
     }*/
 
-    /** @test */
+    /* @test */
     /*public function it_deletes_menu_items()
     {
         $this->authenticateAsAdmin();
