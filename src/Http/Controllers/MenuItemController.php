@@ -86,10 +86,10 @@ class MenuItemController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-        
+
         $menuItem = new MenuItem();
         $this->saveOnDb($request, $menuItem);
-        
+
         return redirect()->route('menuItemsIndex', ['id' => $request->menu_id])
                         ->with('success', __('messages.menu_item_added_successfully'));
     }
@@ -210,7 +210,7 @@ class MenuItemController extends Controller
                 $this->updateOrder($menuItem->menu_id, $menuItem->parent_item_id, $menuItem->id, $request->get('order'));
             }
         }
-        
+
         $menuItem->save();
     }
 
