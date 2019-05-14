@@ -84,14 +84,15 @@ class MenuItemControllerTest extends TestCase
         $response->assertViewIs('laravel-quick-menus::menuItems.index');
     }
 
-    /* @test */
-    /*public function it_does_not_store_invalid_menu_item()
+    /** @test */
+    public function it_does_not_store_invalid_menu_item()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
         $response = $this->post('/menuItems', []);
         $response->assertSessionHasErrors();
         $this->assertNull(MenuItem::first());
-    }*/
+    }
 
     /* @test */
     /*public function it_displays_the_menu_item_show_page()
