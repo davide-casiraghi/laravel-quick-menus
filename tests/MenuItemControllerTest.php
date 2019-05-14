@@ -16,13 +16,11 @@ class MenuItemControllerTest extends TestCase
     public function it_runs_the_test_factory()
     {
         $menuItem = factory(MenuItem::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
+                            'name' => 'Main menu',
                         ]);
         $this->assertDatabaseHas('menu_item_translations', [
                                 'locale' => 'en',
-                                'name' => 'Regular Jams',
-                                'slug' => 'regular-jams',
+                                'name' => 'Main menu',
                 ]);
     }
 

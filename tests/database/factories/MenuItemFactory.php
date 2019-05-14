@@ -13,11 +13,18 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(DavideCasiraghi\LaravelQuickMenus\Models\MenuItem::class, function (Faker $faker) {
-    $event_category_name = $faker->name;
-    $slug = Str::slug($event_category_name, '-').rand(10000, 100000);
+    $menu_item_name = $faker->name;
+    $slug = Str::slug($menu_item_name, '-');
 
     return [
-        'name:en' => $event_category_name,
+        'name:en' => $menu_item_name,
         'slug:en' => $slug,
+        'parent_item_id' => null,
+        'url' => null,
+        'font_awesome_class' => null,
+        'route' => null,
+        'type' => null,
+        'menu_id' => 1,
+        'order' => 1,
     ];
 });

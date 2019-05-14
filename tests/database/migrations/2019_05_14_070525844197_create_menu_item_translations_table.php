@@ -13,7 +13,7 @@ class CreateMenuItemTranslationsTable extends Migration
             $table->integer('menu_item_id')->unsigned();
 
             $table->string('name');
-            $table->text('compact_name')->nullable();
+            $table->text('slug')->nullable();
 
             $table->string('locale')->index();
 

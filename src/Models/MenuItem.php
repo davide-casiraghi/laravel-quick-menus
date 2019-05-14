@@ -20,10 +20,10 @@ class MenuItem extends Model
 
     use Translatable;
 
-    public $translatedAttributes = ['name', 'compact_name'];
+    public $translatedAttributes = ['name', 'slug'];
 
     protected $fillable = [
-        'name', 'compact_name', 'parent_item_id', 'url', 'font_awesome_class', 'route', 'type', 'menu_id', 'order',
+        'parent_item_id', 'url', 'font_awesome_class', 'route', 'type', 'menu_id', 'order',
     ];
 
     /***************************************************************************/

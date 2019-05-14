@@ -17,5 +17,5 @@ class MenuItemTranslation extends Model
     /***************************************************************************/
 
     public $timestamps = false;
-    protected $fillable = ['name', 'description', 'slug'];
+    protected $fillable = ['name', 'slug'];
 }
