@@ -118,15 +118,17 @@ class MenuItemController extends Controller
     public function edit(MenuItem $menuItem)
     {
         $menu = Menu::orderBy('name')->pluck('name', 'id');
-        $menuItems = MenuItem::orderBy('name')->pluck('name', 'id');
+        $menuItems = MenuItem::listsTranslations('name')->orderBy('name')->pluck('name', 'id');
+
         $menuItemsSameMenuAndLevel = $this->getItemsSameMenuAndLevel($menuItem->menu_id, $menuItem->parent_item_id, 1);
         $menuItemsTree = MenuItem::getItemsTree($menuItem->menu_id);
+        
         $routeNames = array_map(function (\Illuminate\Routing\Route $route) {
             if (isset($route->action['as'])) {
                 return $route->action['as'];
             }
         }, (array) Route::getRoutes()->getIterator());
-
+        
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 
@@ -295,7 +297,8 @@ class MenuItemController extends Controller
     public function getItemsSameMenuAndLevel($menuId, $parentItemId, $kind)
     {
         if ($kind == 1) {
-            $ret = MenuItem::where('parent_item_id', '=', $parentItemId)
+            $ret = MenuItem::listsTranslations('name')
+                                            ->where('parent_item_id', '=', $parentItemId)
                                             ->where('menu_id', '=', $menuId)
                                             ->orderBy('order')
                                             ->pluck('name', 'id');

@@ -87,32 +87,45 @@ class MenuItemControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
+        
         $response = $this->post('/menuItems', []);
         $response->assertSessionHasErrors();
         $this->assertNull(MenuItem::first());
     }
 
-    /* @test */
+    /** @test */
     /*public function it_displays_the_menu_item_show_page()
     {
         $this->authenticate();
-
+        $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItem::class)->create();
-        $response = $this->get('/menuItems/'.$menuItem->id);
+        
+        $response = $this
+                        ->followingRedirects()
+                        ->get('/menuItems/'.$menuItem->id)->dump();
         $response->assertViewIs('laravel-quick-menus::menuItems.show')
                  ->assertStatus(200);
     }*/
 
     /* @test */
-    /*public function it_displays_the_menu_item_edit_page()
+    public function it_displays_the_menu_item_edit_page()
     {
         $this->authenticateAsAdmin();
-
-        $menuItem = factory(MenuItem::class)->create();
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 0,
+            'name:en' => 'Home',
+        ]);
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 1,
+        ]);
+        
         $response = $this->get("/menuItems/{$menuItem->id}/edit");
         $response->assertViewIs('laravel-quick-menus::menuItems.edit')
                  ->assertStatus(200);
-    }*/
+    }
 
     /* @test */
     /*public function it_updates_valid_menu_item()
