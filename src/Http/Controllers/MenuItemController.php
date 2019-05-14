@@ -50,7 +50,6 @@ class MenuItemController extends Controller
      */
     public function create(Request $request)
     {
-        //dd($request->menuId);
         $menu = Menu::orderBy('name')->pluck('name', 'id');
         $menuItems = MenuItem::orderBy('name')->pluck('name', 'id');
         $menuItemsTree = MenuItem::getItemsTree(0);
@@ -59,7 +58,7 @@ class MenuItemController extends Controller
                 return $route->action['as'];
             }
         }, (array) Route::getRoutes()->getIterator());
-        //dd($request);
+        
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 
@@ -68,7 +67,7 @@ class MenuItemController extends Controller
             ->with('menu', $menu)
             ->with('menuItemsTree', $menuItemsTree)
             ->with('routeNames', $routeNames)
-            ->with('selectedMenuId', $request->menuId);
+            ->with('selectedMenuId', $request['menuId']);
     }
 
     /***************************************************************************/
