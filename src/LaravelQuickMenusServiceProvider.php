@@ -14,10 +14,10 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-quick-menus');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-quick-menus');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-quick-menus');
+         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-quick-menus');
+         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+         $this->app['router']->aliasMiddleware('admin', \DavideCasiraghi\LaravelQuickMenus\Http\Middleware\Admin::class);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -35,12 +35,31 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
             ], 'assets');*/
 
             // Publishing the translation files.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-quick-menus'),
-            ], 'lang');*/
+            ], 'lang');
 
             // Registering package commands.
             // $this->commands([]);
+            
+            
+            /* - Migrations -
+               create a migration instance for each .php.stub file eg.
+               create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php
+            */
+            $migrations = [
+                     'CreateMenusTable' => 'create_menus_table',
+                     'CreateMenuItemsTable' => 'create_menu_items_table',
+                     'CreateMenuItemTranslationsTable' => 'create_menu_item_translations_table',
+                 ];
+
+            foreach ($migrations as $migrationFunctionName => $migrationFileName) {
+                if (! class_exists($migrationFunctionName)) {
+                    $this->publishes([
+                             __DIR__.'/../database/migrations/'.$migrationFileName.'.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_'.$migrationFileName.'.php'),
+                         ], 'migrations');
+                }
+            }
         }
     }
 
