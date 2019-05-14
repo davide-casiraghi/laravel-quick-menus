@@ -1,4 +1,4 @@
-@extends('menuItems.layout')
+@extends('laravel-quick-menus::menuItems.layout')
 
 @section('javascript-document-ready')
     @parent
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-   @include('partials.forms.error-management', [
+   @include('laravel-quick-menus::partials.error-management', [
       'style' => 'alert-danger',
     ])
 
@@ -52,7 +52,7 @@
 
          <div class="row">
             <div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                       'title' => __('general.name'),
                       'name' => 'name',
                       'placeholder' => 'Menu item name',
@@ -61,7 +61,7 @@
                 ])
             </div>
             <div class="col-12">
-                @include('partials.forms.select', [
+                @include('laravel-quick-menus::partials.select', [
                     'title' => __('views.menu_id'),
                     'name' => 'menu_id',
                     'placeholder' => __('views.menu_id'),
@@ -73,7 +73,7 @@
                 ])
             </div>
             <div class="col-12">
-                @include('partials.forms.select-menu-items-parent', [
+                @include('laravel-quick-menus::partials.select-menu-items-parent', [
                     'title' => __('views.parent_menu_item'),
                     'name' => 'parent_item_id',
                     'placeholder' => __('views.parent_menu_item'),
@@ -96,7 +96,7 @@
             </div>
                         
             {{--<div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                       'title' => __('views.menu_item_route'),
                       'name' => 'route',
                       'placeholder' => 'Route',
@@ -104,7 +104,7 @@
                 ])
             </div>--}}
             <div class="col-12">
-                @include('partials.forms.select-menu-items-route', [
+                @include('laravel-quick-menus::partials.select-menu-items-route', [
                     'title' => __('views.menu_item_route'),
                     'name' => 'route',
                     'placeholder' => __('views.menu_item_route'),
@@ -115,7 +115,7 @@
                 ])
             </div>
             <div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                       'title' => 'Url',
                       'name' => 'url',
                       'placeholder' => 'The relative url - eg: /post/about',
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                       'title' => __('views.menu_item_font_awesome_class'),
                       'name' => 'font_awesome_class',
                       'placeholder' => 'Font awesome icon class',
@@ -145,7 +145,7 @@
                 ])
             </div>
             <div class="col-12">
-                @include('partials.forms.checkbox', [
+                @include('laravel-quick-menus::partials.checkbox', [
                       'name' => 'hide_name',
                       'description' => __('views.menu_item_hide_name'),
                       'value' => '',
@@ -155,7 +155,7 @@
         </div>
         
 
-        @include('partials.forms.buttons-back-submit', [
+        @include('laravel-quick-menus::partials.buttons-back-submit', [
             'route' => 'menuItemsIndex',
             'routeParameter' => $selectedMenuId,
         ])

@@ -1,4 +1,4 @@
-@extends('menus.layout')
+@extends('laravel-quick-menus::menus.layout')
 
 
 @section('content')
@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    @include('partials.forms.error-management', [
+    @include('laravel-quick-menus::partials.error-management', [
       'style' => 'alert-danger',
     ])
 
@@ -20,7 +20,7 @@
 
          <div class="row">
             <div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                       'title' => __('general.name'),
                       'name' => 'name',
                       'placeholder' => 'menu Name',
@@ -46,7 +46,7 @@
             
         </div>
 
-        @include('partials.forms.buttons-back-submit', [
+        @include('laravel-quick-menus::partials.buttons-back-submit', [
             'route' => 'menus.index'  
         ])
 

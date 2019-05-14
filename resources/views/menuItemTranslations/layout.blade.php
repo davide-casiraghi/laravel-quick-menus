@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('laravel-quick-menus::layout')
 
 @section('title',  "Menu item translation" )
 

@@ -1,4 +1,4 @@
-@extends('menuItemTranslations.layout')
+@extends('laravel-quick-menus::menuItemTranslations.layout')
 
 @section('content')
     
@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    @include('partials.forms.error-management', [
+    @include('laravel-quick-menus::partials.error-management', [
           'style' => 'alert-danger',
     ])
 
@@ -19,27 +19,27 @@
         @csrf
         @method('PUT')
 
-            @include('partials.forms.input-hidden', [
+            @include('laravel-quick-menus::partials.input-hidden', [
                   'name' => 'menu_item_translation_id',
                   'value' => $menuItemTranslation->id
             ])
             
-            @include('partials.forms.input-hidden', [
+            @include('laravel-quick-menus::partials.input-hidden', [
                   'name' => 'menu_item_id',
                   'value' => $menuItemId,
             ])
-            @include('partials.forms.input-hidden', [
+            @include('laravel-quick-menus::partials.input-hidden', [
                   'name' => 'language_code',
                   'value' => $languageCode
             ])
-            @include('partials.forms.input-hidden', [
+            @include('laravel-quick-menus::partials.input-hidden', [
                   'name' => 'selected_menu_id',
                   'value' => $selectedMenuId,
             ])
 
          <div class="row">
             <div class="col-12">
-                @include('partials.forms.input', [
+                @include('laravel-quick-menus::partials.input', [
                     'title' => 'Name',
                     'name' => 'name',
                     'placeholder' => 'Menu item name',
@@ -51,7 +51,7 @@
         
         <div class="row mt-2">  
             <div class="col-12 action">
-                @include('partials.forms.buttons-back-submit', [
+                @include('laravel-quick-menus::partials.buttons-back-submit', [
                     'route' => 'menuItemsIndex',
                     'routeParameter' => $selectedMenuId,
                 ])

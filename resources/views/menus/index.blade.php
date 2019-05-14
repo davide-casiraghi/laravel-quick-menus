@@ -1,4 +1,4 @@
-@extends('menus.layout')
+@extends('laravel-quick-menus::menus.layout')
 
 
 @section('content')
