@@ -1,6 +1,6 @@
 <?php
 
-namespace DavideCasiraghi\LaravelQuickMenus;
+namespace DavideCasiraghi\LaravelQuickMenus\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
