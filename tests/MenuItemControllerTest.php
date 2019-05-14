@@ -46,7 +46,7 @@ class MenuItemControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_displays_the_menu_item_create_page()
+    /*public function it_displays_the_menu_item_create_page()
     {
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
@@ -62,7 +62,7 @@ class MenuItemControllerTest extends TestCase
         //$this->get('menuItems/create')->dump();
             //->assertViewIs('laravel-quick-menus::menuItems.create')
             //->assertStatus(200);
-    }
+    }*/
 
     /** @test */
     /*public function it_stores_a_valid_menu_item()
