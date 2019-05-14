@@ -81,7 +81,7 @@ class MenuItemTranslationController extends Controller
         $menuItemTranslation->locale = $request->get('language_code');
 
         $menuItemTranslation->name = $request->get('name');
-        $menuItemTranslation->compact_name = Str::slug($menuItemTranslation->name, '-');
+        $menuItemTranslation->slug = Str::slug($menuItemTranslation->name, '-');
 
         $menuItemTranslation->save();
 
@@ -108,7 +108,7 @@ class MenuItemTranslationController extends Controller
         $menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
 
         $mi_t['name'] = $request->get('name');
-        $mi_t['compact_name'] = Str::slug($request->get('name'), '-');
+        $mi_t['slug'] = Str::slug($request->get('name'), '-');
 
         $menuItemTranslation->update($mi_t);
 
