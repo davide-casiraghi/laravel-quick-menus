@@ -2,6 +2,7 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelQuickMenusServiceProvider extends ServiceProvider
