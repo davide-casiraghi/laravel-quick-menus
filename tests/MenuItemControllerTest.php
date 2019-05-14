@@ -128,31 +128,42 @@ class MenuItemControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_updates_valid_menu_item()
+    public function it_updates_valid_menu_item()
     {
         $this->authenticateAsAdmin();
-        $menuItem = factory(MenuItem::class)->create();
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 0,
+            'name:en' => 'Home',
+        ]);
 
         $attributes = ([
+            'menu_id' => $menu->id,
             'name' => 'test name updated',
-            'slug' => 'test slug updated',
           ]);
 
         $response = $this->followingRedirects()
                          ->put('/menuItems/'.$menuItem->id, $attributes);
         $response->assertViewIs('laravel-quick-menus::menuItems.index')
                  ->assertStatus(200);
-    }*/
+    }
 
-    /* @test */
-    /*public function it_does_not_update_invalid_menu_item()
+    /** @test */
+    public function it_does_not_update_invalid_menu_item()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 0,
+            'name:en' => 'Home',
+        ]);
 
-        $menuItem = factory(MenuItem::class)->create();
-        $response = $this->put('/menuItems/'.$menuItem->id, []);
+        $response = $this->followingRedirects()
+                         ->put('/menuItems/'.$menuItem->id, []);
         $response->assertSessionHasErrors();
-    }*/
+    }
 
     /** @test */
     public function it_deletes_menu_items()

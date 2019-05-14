@@ -155,9 +155,6 @@ class MenuItemController extends Controller
             'name' => 'required',
         ]);
 
-        // Set the default language to edit the post for the admin to English (to avoid bug with null name)
-        App::setLocale('en');
-
         $this->saveOnDb($request, $menuItem);
 
         return redirect()->route('menuItemsIndex', ['id' => $request->menu_id])
