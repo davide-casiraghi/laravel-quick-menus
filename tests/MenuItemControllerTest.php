@@ -6,8 +6,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 
-use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
-
 class MenuItemControllerTest extends TestCase
 {
     use WithFaker;
@@ -64,8 +62,8 @@ class MenuItemControllerTest extends TestCase
 
         $menu = factory(Menu::class)->create();
         $data = [
-            'name' => "test name",
-            'slug' => "test-name",
+            'name' => 'test name',
+            'slug' => 'test-name',
             'parent_item_id' => null,
             'url' => null,
             'font_awesome_class' => null,
