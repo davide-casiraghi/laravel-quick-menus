@@ -24,9 +24,9 @@ class ContinentControllerTest extends TestCase
     public function it_displays_the_menus_index_page()
     {
         $this->authenticateAsAdmin();
-        $this->get('menus')->dump();
-        //    ->assertViewIs('laravel-quick-menus::menus.index')
-        //    ->assertStatus(200);
+        $this->get('menus')
+                ->assertViewIs('laravel-quick-menus::menus.index')
+                ->assertStatus(200);
     }
 
     /** @test */
