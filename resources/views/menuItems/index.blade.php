@@ -23,7 +23,7 @@
     {{-- List of menus items --}}
     <div class="menuItemsList my-4 alternateColors">
         @foreach ($menuItemsTree as $menuItem)
-            @include('menuItems.index-item', [
+            @include('laravel-quick-menus::menuItems.index-item', [
                 'menuItem' => $menuItem,
                 'level' => 1,
                 'countriesAvailableForTranslations' => $countriesAvailableForTranslations,

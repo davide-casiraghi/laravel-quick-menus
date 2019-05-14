@@ -45,10 +45,12 @@ class MenuItem extends Model
                         ->orderBy('order', 'ASC')
                         ->get();
 
+        // Create an items multidimensional array by parent_item_id
         $new = [];
         foreach ($menuItems as $menuItem) {
             $new[$menuItem['parent_item_id']][] = $menuItem;
         }
+    
         if (! empty($new)) {
             $ret = self::createTree($new, $new[0]);
         } else {

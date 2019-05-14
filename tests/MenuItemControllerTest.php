@@ -4,6 +4,7 @@ namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\WithFaker;
+use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 
 class MenuItemControllerTest extends TestCase
@@ -25,13 +26,24 @@ class MenuItemControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_displays_the_menu_items_index_page()
+    public function it_displays_the_menu_items_index_page()
     {
         $this->authenticateAsAdmin();
-        $this->get('menuItems')
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 0,
+            'name:en' => 'Home',
+        ]);
+        $menuItem = factory(MenuItem::class)->create([
+            'menu_id' => $menu->id,
+            'parent_item_id' => 1,
+        ]);
+
+        $this->get('menuItems/index/1')
             ->assertViewIs('laravel-quick-menus::menuItems.index')
             ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     /*public function it_displays_the_menu_item_create_page()

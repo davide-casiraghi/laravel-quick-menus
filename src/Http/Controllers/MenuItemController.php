@@ -30,9 +30,11 @@ class MenuItemController extends Controller
     {
         $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
 
-        $selectedMenuName = Menu::find($id)->name;
+        $selectedMenu = Menu::find($id);
+        $selectedMenuName = $selectedMenu->name;
+        
         $menuItemsTree = MenuItem::getItemsTree($id);
-
+        
         return view('laravel-quick-menus::menuItems.index', compact('menuItemsTree'))
                     ->with('selectedMenuId', $id)
                     ->with('selectedMenuName', $selectedMenuName)

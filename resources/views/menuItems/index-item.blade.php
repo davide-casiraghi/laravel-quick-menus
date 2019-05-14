@@ -44,7 +44,7 @@
 {{-- Sub Items (recursive) --}}
 @if (!empty($menuItem->children))
     @foreach ($menuItem->children as $menuItemChildren)
-        @include('menuItems.index-item', [
+        @include('laravel-quick-menus::menuItems.index-item', [
             'menuItem' => $menuItemChildren,
             'level' => $level+1,
         ])
