@@ -122,13 +122,13 @@ class MenuItemController extends Controller
 
         $menuItemsSameMenuAndLevel = $this->getItemsSameMenuAndLevel($menuItem->menu_id, $menuItem->parent_item_id, 1);
         $menuItemsTree = MenuItem::getItemsTree($menuItem->menu_id);
-        
+
         $routeNames = array_map(function (\Illuminate\Routing\Route $route) {
             if (isset($route->action['as'])) {
                 return $route->action['as'];
             }
         }, (array) Route::getRoutes()->getIterator());
-        
+
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 

@@ -87,7 +87,7 @@ class MenuItemControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
-        
+
         $response = $this->post('/menuItems', []);
         $response->assertSessionHasErrors();
         $this->assertNull(MenuItem::first());
@@ -99,7 +99,7 @@ class MenuItemControllerTest extends TestCase
         $this->authenticate();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItem::class)->create();
-        
+
         $response = $this
                         ->followingRedirects()
                         ->get('/menuItems/'.$menuItem->id)->dump();
@@ -121,7 +121,7 @@ class MenuItemControllerTest extends TestCase
             'menu_id' => $menu->id,
             'parent_item_id' => 1,
         ]);
-        
+
         $response = $this->get("/menuItems/{$menuItem->id}/edit");
         $response->assertViewIs('laravel-quick-menus::menuItems.edit')
                  ->assertStatus(200);
