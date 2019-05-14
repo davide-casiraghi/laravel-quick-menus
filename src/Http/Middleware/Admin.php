@@ -1,6 +1,6 @@
 <?php
 
-namespace DavideCasiraghi\LaravelSmartBlog\Http\Middleware;
+namespace DavideCasiraghi\LaravelQuickMenus\Http\Middleware;
 
 use Closure;
 

@@ -23,6 +23,7 @@ class MenuController extends Controller
      */
     public function index(Request $request)
     {
+        dd("aaa");
         $menus = Menu::orderBy('name')->get();
 
         return view('laravel-quick-menus::menus.index', compact('menus'));
