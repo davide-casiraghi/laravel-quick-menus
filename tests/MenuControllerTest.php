@@ -17,7 +17,7 @@ class ContinentControllerTest extends TestCase
         $menu = factory(Menu::class)->create();
         $this->assertDatabaseHas('menus', [
                                 'id' => '1',
-                ]);
+                                ]);
     }
 
     /** @test */
@@ -67,9 +67,10 @@ class ContinentControllerTest extends TestCase
         $this->authenticateAsAdmin();
 
         $menu = factory(Menu::class)->create();
-        $response = $this->get("/menus/{$menu->id}");
-        $response->assertViewIs('laravel-quick-menus::menus.show')
-                 ->assertStatus(200);
+        
+        $response = $this->get('/menus/'.$menu->id)->dump();
+        //$response->assertViewIs('laravel-quick-menus::menus.show')
+        //         ->assertStatus(200);
     }*/
 
     /** @test */

@@ -73,10 +73,10 @@ class MenuController extends Controller
      * @param  \DavideCasiraghi\LaravelQuickMenus\Models\Menu  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    /*public function show(Menu $menu)
     {
         return view('laravel-quick-menus::menus.show', compact('menu'));
-    }
+    }*/
 
     /***************************************************************************/
 
