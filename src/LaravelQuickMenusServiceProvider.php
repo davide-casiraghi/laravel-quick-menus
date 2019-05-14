@@ -15,10 +15,10 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-quick-menus');
-         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-quick-menus');
-         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-         $this->app['router']->aliasMiddleware('admin', \DavideCasiraghi\LaravelQuickMenus\Http\Middleware\Admin::class);
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-quick-menus');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-quick-menus');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->app['router']->aliasMiddleware('admin', \DavideCasiraghi\LaravelQuickMenus\Http\Middleware\Admin::class);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -42,8 +42,7 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
-            
-            
+
             /* - Migrations -
                create a migration instance for each .php.stub file eg.
                create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php

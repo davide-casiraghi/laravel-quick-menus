@@ -3,12 +3,12 @@
 namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
 use Route;
-use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use Validator;
-use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
+use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class MenuItemController extends Controller
@@ -32,9 +32,9 @@ class MenuItemController extends Controller
 
         $selectedMenu = Menu::find($id);
         $selectedMenuName = $selectedMenu->name;
-        
+
         $menuItemsTree = MenuItem::getItemsTree($id);
-        
+
         return view('laravel-quick-menus::menuItems.index', compact('menuItemsTree'))
                     ->with('selectedMenuId', $id)
                     ->with('selectedMenuName', $selectedMenuName)
@@ -59,7 +59,7 @@ class MenuItemController extends Controller
                 return $route->action['as'];
             }
         }, (array) Route::getRoutes()->getIterator());
-//dd($request);
+        //dd($request);
         // Set the default language to edit the post for the admin to English (to avoid bug with null name)
         //App::setLocale('en');
 

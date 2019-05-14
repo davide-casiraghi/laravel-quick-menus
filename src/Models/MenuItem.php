@@ -50,7 +50,7 @@ class MenuItem extends Model
         foreach ($menuItems as $menuItem) {
             $new[$menuItem['parent_item_id']][] = $menuItem;
         }
-    
+
         if (! empty($new)) {
             $ret = self::createTree($new, $new[0]);
         } else {

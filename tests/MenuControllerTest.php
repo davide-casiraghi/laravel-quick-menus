@@ -5,7 +5,7 @@ namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 
-class ContinentControllerTest extends TestCase
+class MenuControllerTest extends TestCase
 {
     use WithFaker;
 
@@ -67,7 +67,7 @@ class ContinentControllerTest extends TestCase
         $this->authenticateAsAdmin();
 
         $menu = factory(Menu::class)->create();
-        
+
         $response = $this->get('/menus/'.$menu->id)->dump();
         //$response->assertViewIs('laravel-quick-menus::menus.show')
         //         ->assertStatus(200);

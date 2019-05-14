@@ -2,9 +2,9 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
-use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use Validator;
 use Illuminate\Http\Request;
+use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 
 class MenuController extends Controller
 {

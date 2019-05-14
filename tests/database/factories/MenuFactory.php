@@ -13,9 +13,8 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(DavideCasiraghi\LaravelQuickMenus\Models\Menu::class, function (Faker $faker) {
-    
     return [
-        'name' => $faker->word." menu",
+        'name' => $faker->word.' menu',
         'position' => 1,
         'order' => 1,
     ];
