@@ -1,6 +1,6 @@
 <?php
 
-namespace DavideCasiraghi\LaravelSmartBlog\Models;
+namespace DavideCasiraghi\LaravelQuickMenus\Models;
 
 use Illuminate\Support\Facades\Auth;
 use Dimsav\Translatable\Translatable;
