@@ -4,6 +4,7 @@ namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
+use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
 
 class MenuItemTranslationControllerTest extends TestCase
@@ -101,16 +102,15 @@ class MenuItemTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
-        $menuItem = factory(MenuItemTranslation::class)->create([
+        $menuItem = factory(MenuItem::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-
+                
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
-            'menu_item_id' => 1,
             'selected_menu_id' => 1,
         ];
 
@@ -120,14 +120,15 @@ class MenuItemTranslationControllerTest extends TestCase
 
         // Update the translation
         $attributes = ([
-            'menu_item_id' => $menuItem->id,
-            'language_code' => 'es',
+            'menu_item_translation_id' => 2,
             'name' => 'Spanish menu item name updated',
+            'language_code' => 'es',
             'menu_item_id' => 1,
             'selected_menu_id' => 1,
           ]);
         $response = $this->followingRedirects()
                          ->put('/menuItemTranslations/update', $attributes);
+                         
         $response->assertViewIs('laravel-quick-menus::menuItems.index')
                  ->assertStatus(200);
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'es', 'name' => 'Spanish menu item name updated']);

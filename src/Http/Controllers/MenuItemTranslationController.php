@@ -105,8 +105,11 @@ class MenuItemTranslationController extends Controller
             'name' => 'required',
         ]);
 
-        $menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
-
+        //$menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
+        $menuItemTranslation = MenuItemTranslation::find($request->get('menu_item_translation_id'));
+        //dd($menuItemTranslation);
+        
+        //dd($menuItemTranslation->id);
         $mi_t = [];
         $mi_t['name'] = $request->get('name');
         $mi_t['slug'] = Str::slug($request->get('name'), '-');
@@ -114,7 +117,7 @@ class MenuItemTranslationController extends Controller
         $menuItemTranslation->update($mi_t);
 
         $selectedMenuId = $request->get('selected_menu_id');
-
+        
         return redirect()->route('menuItemsIndex', ['id' => $selectedMenuId])
                         ->with('success', 'Translation updated successfully');
     }

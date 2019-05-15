@@ -26,5 +26,6 @@ $factory->define(DavideCasiraghi\LaravelQuickMenus\Models\MenuItem::class, funct
         'type' => null,
         'menu_id' => 1,
         'order' => 1,
+        'parent_item_id' => 0, // Root item (submenu items has value 1, sub-sub has value 2)
     ];
 });
