@@ -53,15 +53,21 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_does_not_store_invalid_menu_item_translation()
+    public function it_does_not_store_invalid_menu_item_translation()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItemTranslation::class)->create([
+                            'name' => 'Regular Jams',
+                            'slug' => 'regular-jams',
+                        ]);
+                        
         $response = $this
             ->followingRedirects()
             ->post('/menuItemTranslations/store', []);
 
         $response->assertSessionHasErrors();
-    }*/
+    }
 
     /** @test */
     /*public function it_displays_the_menu_item_translation_edit_page()
