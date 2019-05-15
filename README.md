@@ -1,11 +1,14 @@
-# Very short description of the package
+# Laravel Quick Menus
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-quick-menus)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-quick-menus/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-quick-menus)
+[![StyleCI](https://styleci.io/repos/186456960/shield?style=flat-square)](https://styleci.io/repos/186456960)
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus)
-[![Total Downloads](https://img.shields.io/packagist/dt/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-quick-menus)
+[![Coverage Status](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus/)
+<a href="https://codeclimate.com/github/davide-casiraghi/laravel-quick-menus/maintainability"><img src="https://api.codeclimate.com/v1/badges/643fec379dff5f57bb4f/maintainability" /></a>
+[![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/laravel-quick-menus.svg)](https://github.com/davide-casiraghi/laravel-quick-menus) 
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+A Laravel package to generate Bootstrap 4 multi language menus.
 
 ## Installation
 
