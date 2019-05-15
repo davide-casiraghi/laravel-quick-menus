@@ -57,7 +57,7 @@
         {{-- Sub items --}}
              @if(!empty($item->children))
                <ul class="dropdown-menu">
-                     @include('menus.nav.nav-items', ['items' => $item->children])
+                     @include('laravel-quick-menus::menus.nav.nav-items', ['items' => $item->children])
                </ul>
              @endif
      @endif
