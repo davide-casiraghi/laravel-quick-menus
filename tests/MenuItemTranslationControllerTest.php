@@ -97,9 +97,10 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_updates_valid_menu_item_translation()
+    public function it_updates_valid_menu_item_translation()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
@@ -109,27 +110,28 @@ class MenuItemTranslationControllerTest extends TestCase
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
+            'menu_item_id' => 1,
+            'selected_menu_id' => 1,
         ];
 
-        $this->post('/menuItemTranslations/store', $data);
+        $response = $this
+            ->followingRedirects()
+            ->post('/menuItemTranslations/store', $data);
 
         // Update the translation
         $attributes = ([
-            'menu_item_translation_id' => 2,
+            'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name updated',
+            'menu_item_id' => 1,
+            'selected_menu_id' => 1,
           ]);
         $response = $this->followingRedirects()
                          ->put('/menuItemTranslations/update', $attributes);
-        $response->assertViewIs('laravel-quick-menus::eventCategories.index')
+        $response->assertViewIs('laravel-quick-menus::menuItems.index')
                  ->assertStatus(200);
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'es', 'name' => 'Spanish menu item name updated']);
-
-        // Update with no attributes - to not pass validation
-        //$response = $this->followingRedirects()
-                        // ->put('/menuItemTranslations/update', [])->dump();
-                        // ->assertSessionHasErrors();
-    }*/
+    }
 
     /** @test */
     /*public function it_does_not_update_invalid_menu_item()
@@ -174,6 +176,6 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->post('/menuItemTranslations/store', $data);
 
         $response = $this->delete('/menuItemTranslations/destroy/2');
-        $response->assertRedirect('/eventCategories');
+        $response->assertRedirect('/menuItems');
     }*/
 }
