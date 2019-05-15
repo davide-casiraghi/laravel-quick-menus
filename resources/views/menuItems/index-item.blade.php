@@ -19,7 +19,7 @@
             @if(!empty($menuItem->font_awesome_class))<i class="{{ $menuItem->font_awesome_class }}"></i> @endif
             @if(empty($menuItem->hide_name)){{ $menuItem->translate('en')->name }} @endif
         </a>
-        @if(!empty($menuItem->access)) <span class="text-secondary">- {{App\MenuItem::getAccessName($menuItem->access)}}</span>@endif
+        @if(!empty($menuItem->access)) <span class="text-secondary">- {{DavideCasiraghi\LaravelQuickMenus\Models\MenuItem::getAccessName($menuItem->access)}}</span>@endif
     </div>
     <div class="col-12 col-md-5 mt-2 mt-md-1 order-3 order-md-2 text-right">
         @foreach ($countriesAvailableForTranslations as $key => $countryAvTrans)

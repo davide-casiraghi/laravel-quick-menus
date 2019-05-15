@@ -65,7 +65,7 @@
       {{-- Left Nav --}}
       <ul class='navbar-nav mr-auto'>
           {{--@include('laravel-quick-menus::menus.nav.nav-items', ['items' => $MyNavBar->roots()])--}}
-          @include('laravel-quick-menus::menus.nav.nav-items', ['items' => App\MenuItem::getItemsTree(1)])
+          @include('laravel-quick-menus::menus.nav.nav-items', ['items' => DavideCasiraghi\LaravelQuickMenus\Models\MenuItem::getItemsTree(1)])
       </ul>
       {{-- end - Left Nav --}}
 
@@ -73,7 +73,7 @@
       {{-- Right Nav --}}
       <ul class="navbar-nav navbar-right">
           {{--@include('laravel-quick-menus::menus.nav.nav-items', ['items' => $MyNavBarRight->roots()])--}}
-          @include('laravel-quick-menus::menus.nav.nav-items', ['items' => App\MenuItem::getItemsTree(4)])
+          @include('laravel-quick-menus::menus.nav.nav-items', ['items' => DavideCasiraghi\LaravelQuickMenus\Models\MenuItem::getItemsTree(4)])
           {{--@include('laravel-quick-menus::menus.nav.nav-right-items')--}}
       </ul>
       {{-- end - Right Nav --}}
