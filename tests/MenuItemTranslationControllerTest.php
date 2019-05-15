@@ -27,9 +27,10 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_stores_a_valid_menu_item_translation()
+    public function it_stores_a_valid_menu_item_translation()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
@@ -39,6 +40,8 @@ class MenuItemTranslationControllerTest extends TestCase
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
+            'menu_item_id' => 1,
+            'selected_menu_id' => 1,
         ];
 
         $response = $this
@@ -46,8 +49,8 @@ class MenuItemTranslationControllerTest extends TestCase
             ->post('/menuItemTranslations/store', $data);
 
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'es', 'name' => 'Spanish menu item name']);
-        $response->assertViewIs('laravel-events-calendar::eventCategories.index');
-    }*/
+        $response->assertViewIs('laravel-quick-menus::menuItems.index');
+    }
 
     /** @test */
     /*public function it_does_not_store_invalid_menu_item_translation()
@@ -78,7 +81,7 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->post('/menuItemTranslations/store', $data);
 
         $response = $this->get('/menuItemTranslations/'.$menuItem->id.'/'.'es'.'/edit');
-        $response->assertViewIs('laravel-events-calendar::menuItemTranslations.edit')
+        $response->assertViewIs('laravel-quick-menus::menuItemTranslations.edit')
                  ->assertStatus(200);
     }*/
 
@@ -107,7 +110,7 @@ class MenuItemTranslationControllerTest extends TestCase
           ]);
         $response = $this->followingRedirects()
                          ->put('/menuItemTranslations/update', $attributes);
-        $response->assertViewIs('laravel-events-calendar::eventCategories.index')
+        $response->assertViewIs('laravel-quick-menus::eventCategories.index')
                  ->assertStatus(200);
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'es', 'name' => 'Spanish menu item name updated']);
 

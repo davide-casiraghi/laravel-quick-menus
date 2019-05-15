@@ -67,22 +67,22 @@ class MenuItemTranslationController extends Controller
      */
     public function store(Request $request)
     {
-
         // Validate form datas
         $validator = Validator::make($request->all(), [
                 'name' => 'required',
             ]);
+            
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-
+        
         $menuItemTranslation = new MenuItemTranslation();
         $menuItemTranslation->menu_item_id = $request->get('menu_item_id');
         $menuItemTranslation->locale = $request->get('language_code');
 
         $menuItemTranslation->name = $request->get('name');
         $menuItemTranslation->slug = Str::slug($menuItemTranslation->name, '-');
-
+        
         $menuItemTranslation->save();
 
         $selectedMenuId = $request->get('selected_menu_id');

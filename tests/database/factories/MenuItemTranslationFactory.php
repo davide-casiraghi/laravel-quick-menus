@@ -20,5 +20,6 @@ $factory->define(DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation::c
         'name' => $menu_item_name,
         'slug' => $slug,
         'locale' => 'en',
+        'menu_item_id' => 1,
     ];
 });
