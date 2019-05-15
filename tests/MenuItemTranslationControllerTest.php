@@ -160,20 +160,28 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_deletes_menu_item_translation()
+    public function it_deletes_menu_item_translation()
     {
         $this->authenticateAsAdmin();
-        $menuItem = factory(MenuItemTranslation::class)->create();
-
+        $selectedMenuId = 1;
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
+                            'name' => 'Regular Jams',
+                            'slug' => 'regular-jams',
+                        ]);
+                
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
+            'selected_menu_id' => $selectedMenuId,
         ];
 
-        $this->post('/menuItemTranslations/store', $data);
+        $response = $this
+            ->followingRedirects()
+            ->post('/menuItemTranslations/store', $data);
 
-        $response = $this->delete('/menuItemTranslations/destroy/2');
-        $response->assertRedirect('/menuItems');
-    }*/
+        $response = $this->delete('/menuItemTranslations/destroy/2/'.$selectedMenuId);
+        $response->assertRedirect('/menuItems/index/'.$selectedMenuId);
+    }
 }
