@@ -70,9 +70,10 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_displays_the_menu_item_translation_edit_page()
+    public function it_displays_the_menu_item_translation_edit_page()
     {
         $this->authenticateAsAdmin();
+        $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
@@ -82,14 +83,18 @@ class MenuItemTranslationControllerTest extends TestCase
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
+            'menu_item_id' => 1,
+            'selected_menu_id' => 1,
         ];
 
-        $this->post('/menuItemTranslations/store', $data);
+        $response = $this
+            ->followingRedirects()
+            ->post('/menuItemTranslations/store', $data);
 
-        $response = $this->get('/menuItemTranslations/'.$menuItem->id.'/'.'es'.'/edit');
+        $response = $this->get('/menuItemTranslations/'.$menuItem->id.'/'.'es'.'/'.$menu->id.'/edit');
         $response->assertViewIs('laravel-quick-menus::menuItemTranslations.edit')
                  ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     /*public function it_updates_valid_menu_item_translation()
