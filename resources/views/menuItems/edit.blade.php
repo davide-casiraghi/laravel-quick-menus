@@ -37,7 +37,7 @@
 @section('content')    
     <div class="row">
         <div class="col-12 col-sm-6">
-            <h2>@lang('views.edit_menu_item')</h2>
+            <h2>@lang('menuItem.edit_menu_item')</h2>
         </div>
         <div class="col-12 col-sm-6 text-right">
             <span class="badge badge-secondary">English</span>
@@ -55,7 +55,7 @@
          <div class="row">
             <div class="col-12">
                 @include('laravel-quick-menus::partials.input', [
-                      'title' => __('general.name'),
+                      'title' => __('menuItem.name'),
                       'name' => 'name',
                       'placeholder' => 'Menu item name',
                       'value' => $menuItem->translate('en')->name,
@@ -64,9 +64,9 @@
             </div>
             <div class="col-12">
                 @include('laravel-quick-menus::partials.select', [
-                    'title' => __('views.menu_id'),
+                    'title' => __('menuItem.menu_id'),
                     'name' => 'menu_id',
-                    'placeholder' => __('views.menu_id'),
+                    'placeholder' => __('menuItem.menu_id'),
                     'records' => $menu,
                     'seleted' => $menuItem->menu_id,
                     'liveSearch' => 'false',
@@ -77,9 +77,9 @@
             
             <div class="col-12">
                 @include('laravel-quick-menus::partials.select-menu-items-parent', [
-                    'title' => __('views.parent_menu_item'),
+                    'title' => __('menuItem.parent_menu_item'),
                     'name' => 'parent_item_id',
-                    'placeholder' => __('views.parent_menu_item'),
+                    'placeholder' => __('menuItem.parent_menu_item'),
                     'records' => $menuItemsTree,
                     'seleted' => $menuItem->parent_item_id,
                     'liveSearch' => 'false',
@@ -91,7 +91,7 @@
             
             <div class="col-12">
                 <div class="form-group">
-                    <strong>@lang('views.menu_item_type')</strong>
+                    <strong>@lang('menuItem.menu_item_type')</strong>
                     <select name="type" class="selectpicker" title="Route or Url">
                         <option value="1" @if(empty($menuItem->type)) {{'selected'}} @endif @if(!empty($menuItem->type)) {{  $menuItem->type == '1' ? 'selected' : '' }} @endif>Route</option>
                         <option value="2" @if(!empty($menuItem->type)) {{  $menuItem->type == '2' ? 'selected' : '' }} @endif>Url</option>
@@ -103,7 +103,7 @@
             
             <div class="col-12">
                 @include('laravel-quick-menus::partials.input', [
-                      'title' => __('views.menu_item_route'),
+                      'title' => __('menuItem.menu_item_route'),
                       'name' => 'route',
                       'placeholder' => 'Route',
                       'value' => $menuItem->route,
@@ -122,7 +122,7 @@
             </div>
             <div class="col-12">
                 <div class="form-group">
-                    <strong>@lang('views.menu_item_access')</strong>
+                    <strong>@lang('menuItem.menu_item_access')</strong>
                     <select name="access" class="selectpicker" title="Access">
                         <option value="1" @if(empty($menuItem->access)) {{'selected'}} @endif @if(!empty($menuItem->access)) {{  $menuItem->access == '1' ? 'selected' : '' }} @endif>Public</option>
                         <option value="2" @if(!empty($menuItem->access)) {{  $menuItem->access == '2' ? 'selected' : '' }} @endif>Guest</option>
@@ -134,9 +134,9 @@
             </div>
             <div class="col-12">
                 @include('laravel-quick-menus::partials.select-menu-items-order', [
-                    'title' => __('views.menu_item_order'),
+                    'title' => __('menuItem.menu_item_order'),
                     'name' => 'order',
-                    'placeholder' => __('views.menu_item_order'),
+                    'placeholder' => __('menuItem.menu_item_order'),
                     'records' => $menuItemsSameMenuAndLevel,
                     'seleted' => $menuItem->id,
                     'tooltip' => "The menu item will be placed in the menu after the selected menu item.",
@@ -147,9 +147,9 @@
             </div>
             <div class="col-12">
                 @include('laravel-quick-menus::partials.input', [
-                      'title' => __('views.menu_item_font_awesome_class'),
+                      'title' => __('menuItem.menu_item_font_awesome_class'),
                       'name' => 'font_awesome_class',
-                      'placeholder' => __('views.menu_item_font_awesome_class'),
+                      'placeholder' => __('menuItem.menu_item_font_awesome_class'),
                       'value' => $menuItem->font_awesome_class,
                       'required' => false,
                 ])
@@ -157,7 +157,7 @@
             <div class="col-12">
                 @include('laravel-quick-menus::partials.checkbox', [
                       'name' => 'hide_name',
-                      'description' => __('views.menu_item_hide_name'),
+                      'description' => __('menuItem.menu_item_hide_name'),
                       'value' => $menuItem->hide_name,
                       'required' => false,
                 ])

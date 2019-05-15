@@ -6,10 +6,10 @@
         
         <div class="row">
             <div class="col-12 col-sm-6">
-                <h3>@lang('views.menus_management')</h3>
+                <h3>@lang('menu.menus_management')</h3>
             </div>
             <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-right">
-                <a class="btn btn-success create-new" href="{{ route('menus.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_menu')</a>
+                <a class="btn btn-success create-new" href="{{ route('menus.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('menu.create_new_menu')</a>
             </div>
         </div>
         
@@ -31,13 +31,13 @@
                     
                     <div class="col-12 pb-2 action">
                         <form action="{{ route('menus.destroy',$menu->id) }}" method="POST">
-                            <a class="btn btn-primary float-right" href="{{ route('menus.edit',$menu->id) }}">@lang('views.edit')</a>
-                            <a class="btn btn-info float-right mr-2" href="{{ route('menuItemsIndex', $menu->id) }}"><i class="far fa-bars"></i> @lang('views.menu_items')</a>
+                            <a class="btn btn-primary float-right" href="{{ route('menus.edit',$menu->id) }}">@lang('menu.edit')</a>
+                            <a class="btn btn-info float-right mr-2" href="{{ route('menuItemsIndex', $menu->id) }}"><i class="far fa-bars"></i> @lang('menu.menu_items')</a>
                             
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-link pl-0">@lang('views.delete')</button>
+                            <button type="submit" class="btn btn-link pl-0">@lang('menu.delete')</button>
                         </form>
                     </div>
                 </div>

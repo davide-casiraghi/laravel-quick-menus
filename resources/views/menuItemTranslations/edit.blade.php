@@ -4,7 +4,7 @@
     
     <div class="row py-4">
         <div class="col-12 col-sm-9">
-            <h4>@lang('views.edit_translation')</h4>
+            <h4>@lang('menuItem.edit_translation')</h4>
         </div>
         <div class="col-12 col-sm-3 text-right">
             <span class="badge badge-secondary">{{$selectedLocaleName}}</span>
@@ -60,7 +60,7 @@
                 <form action="{{ route('menuItemTranslations.destroy',[$menuItemTranslation->id, $selectedMenuId]) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-link pl-0">@lang('views.delete_translation')</button>
+                    <button type="submit" class="btn btn-link pl-0">@lang('menuItem.delete_translation')</button>
                 </form>
             </div>
         </div>

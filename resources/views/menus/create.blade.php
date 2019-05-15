@@ -1,11 +1,10 @@
 @extends('laravel-quick-menus::menus.layout')
 
-
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>@lang('views.add_new_menu')</h2>
+                <h2>@lang('menu.add_new_menu')</h2>
             </div>
         </div>
     </div>
@@ -20,7 +19,7 @@
          <div class="row">
             <div class="col-12">
                 @include('laravel-quick-menus::partials.input', [
-                      'title' => __('general.name'),
+                      'title' => __('menu.name'),
                       'name' => 'name',
                       'placeholder' => 'Menu Name',
                       'value' => old('name'),
@@ -30,7 +29,7 @@
             
             <div class="col-12">
                 <div class="form-group">
-                    <strong>@lang('views.menu_position'):</strong>
+                    <strong>@lang('menu.menu_position'):</strong>
                     <select name="position" class="selectpicker" title="Position">
                         <option value="1" {{'selected'}}>Nav - Left (main)</option>
                         <option value="2">Nav - Right</option>
