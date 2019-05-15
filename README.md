@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel Quick Menus
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-quick-menus)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-quick-menus/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-quick-menus)
