@@ -17,7 +17,7 @@ class MenuItemTranslationControllerTest extends TestCase
     public function it_displays_the_menu_item_translation_create_page()
     {
         $this->authenticateAsAdmin();
-        
+
         $menu = factory(Menu::class)->create();
         $menuItemId = 1;
         $languageCode = 'es';
@@ -62,7 +62,7 @@ class MenuItemTranslationControllerTest extends TestCase
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-                        
+
         $response = $this
             ->followingRedirects()
             ->post('/menuItemTranslations/store', []);
@@ -106,7 +106,7 @@ class MenuItemTranslationControllerTest extends TestCase
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-                
+
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
@@ -128,7 +128,7 @@ class MenuItemTranslationControllerTest extends TestCase
           ]);
         $response = $this->followingRedirects()
                          ->put('/menuItemTranslations/update', $attributes);
-                         
+
         $response->assertViewIs('laravel-quick-menus::menuItems.index')
                  ->assertStatus(200);
         $this->assertDatabaseHas('menu_item_translations', ['locale' => 'es', 'name' => 'Spanish menu item name updated']);
@@ -143,7 +143,7 @@ class MenuItemTranslationControllerTest extends TestCase
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-                
+
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
@@ -154,7 +154,7 @@ class MenuItemTranslationControllerTest extends TestCase
         $response = $this
             ->followingRedirects()
             ->post('/menuItemTranslations/store', $data);
-        
+
         $response = $this->put('/menuItemTranslations/update', []);
         $response->assertSessionHasErrors();
     }
@@ -169,7 +169,7 @@ class MenuItemTranslationControllerTest extends TestCase
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-                
+
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
