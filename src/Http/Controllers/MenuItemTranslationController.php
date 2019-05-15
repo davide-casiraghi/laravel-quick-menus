@@ -71,18 +71,18 @@ class MenuItemTranslationController extends Controller
         $validator = Validator::make($request->all(), [
                 'name' => 'required',
             ]);
-            
+
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-        
+
         $menuItemTranslation = new MenuItemTranslation();
         $menuItemTranslation->menu_item_id = $request->get('menu_item_id');
         $menuItemTranslation->locale = $request->get('language_code');
 
         $menuItemTranslation->name = $request->get('name');
         $menuItemTranslation->slug = Str::slug($menuItemTranslation->name, '-');
-        
+
         $menuItemTranslation->save();
 
         $selectedMenuId = $request->get('selected_menu_id');
@@ -104,11 +104,11 @@ class MenuItemTranslationController extends Controller
         request()->validate([
             'name' => 'required',
         ]);
-        
+
         //$menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
         $menuItemTranslation = MenuItemTranslation::find($request->get('menu_item_translation_id'));
         //dd($menuItemTranslation);
-        
+
         //dd($menuItemTranslation->id);
         $mi_t = [];
         $mi_t['name'] = $request->get('name');
@@ -117,7 +117,7 @@ class MenuItemTranslationController extends Controller
         $menuItemTranslation->update($mi_t);
 
         $selectedMenuId = $request->get('selected_menu_id');
-        
+
         return redirect()->route('menuItemsIndex', ['id' => $selectedMenuId])
                         ->with('success', 'Translation updated successfully');
     }
