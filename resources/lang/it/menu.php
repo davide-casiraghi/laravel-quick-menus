@@ -1,6 +1,6 @@
 <?php
 
-return [    
+return [
     'add_new_menu' => 'Aggiungi nuovo menu',
     'create_new_menu' => 'Crea nuovo menu',
     'edit_menu' =>  'Modifica menu',

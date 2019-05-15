@@ -12,6 +12,6 @@ return [
     'name' => 'Nome',
     'edit_menu_item' => 'Edit menu item',
     'menu_item_order' => 'Order',
-    'menu_item_hide_name' => 'Hide name', 
+    'menu_item_hide_name' => 'Hide name',
     'items' => 'Items',
 ];
