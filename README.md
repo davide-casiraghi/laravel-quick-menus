@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-quick-menus)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-quick-menus/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-quick-menus)
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus)
-[![Total Downloads](https://img.shields.io/packagist/dt/davide-casiraghi/laravel-quick-menus.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-quick-menus)
+[![Coverage Status](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-quick-menus/)
 
 A Laravel package to generate Bootstrap 4 multi language menus.
 
