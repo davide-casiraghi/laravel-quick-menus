@@ -135,32 +135,29 @@ class MenuItemTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_does_not_update_invalid_menu_item()
+    public function it_does_not_update_invalid_menu_item_translation_item()
     {
         $this->authenticateAsAdmin();
-        $menuItem = factory(MenuItemTranslation::class)->create([
+        $menu = factory(Menu::class)->create();
+        $menuItem = factory(MenuItem::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
-
+                
         $data = [
             'menu_item_id' => $menuItem->id,
             'language_code' => 'es',
             'name' => 'Spanish menu item name',
+            'selected_menu_id' => 1,
         ];
 
-        $this->post('/menuItemTranslations/store', $data);
-
-        // Update the translation
-        $attributes = ([
-            'menu_item_translation_id' => 2,
-            'language_code' => 'es',
-            'name' => '',
-          ]);
-        $response = $this->followingRedirects()
-                         ->put('/menuItemTranslations/update', $attributes);
+        $response = $this
+            ->followingRedirects()
+            ->post('/menuItemTranslations/store', $data);
+        
+        $response = $this->put('/menuItemTranslations/update', []);
         $response->assertSessionHasErrors();
-    }*/
+    }
 
     /** @test */
     /*public function it_deletes_menu_item_translation()

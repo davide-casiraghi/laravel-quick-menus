@@ -104,7 +104,7 @@ class MenuItemTranslationController extends Controller
         request()->validate([
             'name' => 'required',
         ]);
-
+        
         //$menuItemTranslation = MenuItemTranslation::where('id', $request->get('menu_item_translation_id'));
         $menuItemTranslation = MenuItemTranslation::find($request->get('menu_item_translation_id'));
         //dd($menuItemTranslation);
