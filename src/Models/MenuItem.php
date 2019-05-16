@@ -24,7 +24,7 @@ class MenuItem extends Model
 
     // 'locale', 'menu_item_id' ->  added for the db seeder
     protected $fillable = [
-        'parent_item_id', 'url', 'font_awesome_class', 'route', 'type', 'menu_id', 'order', 'locale', 'menu_item_id',  
+        'parent_item_id', 'url', 'font_awesome_class', 'route', 'type', 'menu_id', 'order', 'locale', 'menu_item_id',
     ];
 
     /***************************************************************************/
