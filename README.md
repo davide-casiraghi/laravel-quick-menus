@@ -27,7 +27,7 @@ composer require davide-casiraghi/laravel-quick-menus
 ### Testing
 
 ``` bash
-composer test
+./vendor/bin/phpunit --coverage-html=html
 ```
 
 ### Changelog
