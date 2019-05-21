@@ -18,6 +18,12 @@ You can install the package via composer:
 composer require davide-casiraghi/laravel-quick-menus
 ```
 
+### Publish all the vendor files
+```php artisan vendor:publish --force```
+
+### Run the database migrations
+```php artisan migrate```
+
 ## Usage
 
 ``` php
