@@ -62,7 +62,7 @@ class MenuController extends Controller
         $this->saveOnDb($request, $menu);
 
         return redirect()->route('menus.index')
-                        ->with('success', __('messages.menu_added_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_added_successfully'));
     }
 
     /***************************************************************************/
@@ -109,7 +109,7 @@ class MenuController extends Controller
         $this->saveOnDb($request, $menu);
 
         return redirect()->route('menus.index')
-                        ->with('success', __('messages.menu_updated_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -125,7 +125,7 @@ class MenuController extends Controller
         $menu->delete();
 
         return redirect()->route('menus.index')
-                        ->with('success', __('messages.menu_deleted_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_deleted_successfully'));
     }
 
     /***************************************************************************/

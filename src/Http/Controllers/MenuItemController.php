@@ -91,7 +91,7 @@ class MenuItemController extends Controller
         $this->saveOnDb($request, $menuItem);
 
         return redirect()->route('menuItemsIndex', ['id' => $request->menu_id])
-                        ->with('success', __('messages.menu_item_added_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_item_added_successfully'));
     }
 
     /***************************************************************************/
@@ -158,7 +158,7 @@ class MenuItemController extends Controller
         $this->saveOnDb($request, $menuItem);
 
         return redirect()->route('menuItemsIndex', ['id' => $request->menu_id])
-                        ->with('success', __('messages.menu_item_updated_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_item_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -174,7 +174,7 @@ class MenuItemController extends Controller
         $menuItem->delete();
 
         return redirect()->route('menuItemsIndex', ['id' => $menuItem->menu_id])
-                        ->with('success', __('messages.menu_item_deleted_successfully'));
+                        ->with('success', __('laravel-quick-menus::messages.menu_item_deleted_successfully'));
     }
 
     /***************************************************************************/

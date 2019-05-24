@@ -10,10 +10,10 @@
 {{--  Authentication Links --}}
 @guest
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"></i> @lang('menu.create_account')</a>
+        <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"></i> @lang('laravel-quick-menus::menu.create_account')</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in "></i> @lang('menu.login')</a>
+        <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in "></i> @lang('laravel-quick-menus::menu.login')</a>
     </li>
 
 
@@ -25,16 +25,16 @@
 
       <ul class="dropdown-menu sm-nowrap dropdown-menu-right">
 
-        {{-- <a class="dropdown-item" href="{{ route('users.index') }}">{{ __('Users') }}</a> --}}
+        {{-- <a class="dropdown-item" href="{{ route('users.index') }}">{{ __('laravel-quick-menus::Users') }}</a> --}}
         {{-- User profile --}}
         <li>
-            <a class="dropdown-item" href="{{ route('users.edit', ['id' => Auth::user()->id]) }}"> <i class="far fa-user-cog"></i> {{ __('menu.my_profile') }}</a>
+            <a class="dropdown-item" href="{{ route('users.edit', ['id' => Auth::user()->id]) }}"> <i class="far fa-user-cog"></i> {{ __('laravel-quick-menus::menu.my_profile') }}</a>
         </li>
         <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-            <i class="fa fa-sign-out "></i> @lang('menu.logout')
+            <i class="fa fa-sign-out "></i> @lang('laravel-quick-menus::menu.logout')
             </a>
          </li>
 

@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h3>@lang('menuItem.items'): {{$selectedMenuName}}</h3>
+                <h3>@lang('laravel-quick-menus::menuItem.items'): {{$selectedMenuName}}</h3>
             </div>
             <div class="pull-right mt-4 float-right">
-                <a class="btn btn-success create-new" href="{{ route('menuItems.create',"menuId=$selectedMenuId") }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_menu_item')</a>
+                <a class="btn btn-success create-new" href="{{ route('menuItems.create',"menuId=$selectedMenuId") }}"><i class="fa fas fa-plus-circle"></i> @lang('laravel-quick-menus::menuItem.create_new_menu_item')</a>
             </div>
         </div>
     </div>
