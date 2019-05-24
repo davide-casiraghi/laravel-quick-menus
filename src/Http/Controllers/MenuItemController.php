@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\App;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Validation\Rule;
 
 class MenuItemController extends Controller
 {
@@ -80,9 +81,8 @@ class MenuItemController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-                'name' => 'required',
-            ]);
+        // Validate form datas
+        $validator = $this->menuItemsValidator($request);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
@@ -151,9 +151,11 @@ class MenuItemController extends Controller
      */
     public function update(Request $request, MenuItem $menuItem)
     {
-        request()->validate([
-            'name' => 'required',
-        ]);
+        // Validate form datas
+        $validator = $this->menuItemsValidator($request);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
         $this->saveOnDb($request, $menuItem);
 
@@ -308,4 +310,33 @@ class MenuItemController extends Controller
 
         return $ret;
     }
+    
+    
+    /***************************************************************************/
+
+    /**
+     * Return the Menu item validator with all the defined constraint.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function menuItemsValidator($request)
+    {
+        $rules = [
+            'name' => 'required',
+            'route' => Rule::requiredIf($request->type == 1),
+            'url' => Rule::requiredIf($request->type == 2),
+        ];
+        
+        
+        
+        
+
+        $messages = [
+            
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        return $validator;
+    }
+    
 }
