@@ -6,11 +6,11 @@ use Route;
 use Validator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\App;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use Illuminate\Validation\Rule;
 
 class MenuItemController extends Controller
 {
@@ -310,8 +310,7 @@ class MenuItemController extends Controller
 
         return $ret;
     }
-    
-    
+
     /***************************************************************************/
 
     /**
@@ -326,17 +325,13 @@ class MenuItemController extends Controller
             'route' => Rule::requiredIf($request->type == 1),
             'url' => Rule::requiredIf($request->type == 2),
         ];
-        
-        
-        
-        
 
         $messages = [
-            
+
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
+
         return $validator;
     }
-    
 }
