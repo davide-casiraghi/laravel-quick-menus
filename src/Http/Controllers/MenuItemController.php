@@ -202,6 +202,12 @@ class MenuItemController extends Controller
         $menuItem->font_awesome_class = $request->get('font_awesome_class');
         $menuItem->hide_name = filter_var($request->hide_name, FILTER_VALIDATE_BOOLEAN);
         $menuItem->route = $request->get('route');
+        $menuItem->route_param_name_1 = $request->get('route_param_name_1');
+        $menuItem->route_param_name_2 = $request->get('route_param_name_2');
+        $menuItem->route_param_name_3 = $request->get('route_param_name_3');
+        $menuItem->route_param_value_1 = $request->get('route_param_value_1');
+        $menuItem->route_param_value_2 = $request->get('route_param_value_2');
+        $menuItem->route_param_value_3 = $request->get('route_param_value_3');
         $menuItem->type = $request->get('type');
         $menuItem->menu_id = $request->get('menu_id');
         $menuItem->access = $request->get('access');
