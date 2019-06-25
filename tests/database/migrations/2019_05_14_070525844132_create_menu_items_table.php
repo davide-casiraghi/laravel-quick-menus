@@ -15,6 +15,12 @@ class CreateMenuItemsTable extends Migration
             $table->integer('type')->nullable();
             $table->string('url')->nullable();
             $table->string('route')->nullable();
+            $table->string('route_param_name_1')->nullable();
+            $table->string('route_param_name_2')->nullable();
+            $table->string('route_param_name_3')->nullable();
+            $table->string('route_param_value_1')->nullable();
+            $table->string('route_param_value_2')->nullable();
+            $table->string('route_param_value_3')->nullable();
             $table->string('font_awesome_class')->nullable();
             $table->boolean('hide_name')->default('0');
             $table->integer('order')->nullable();
