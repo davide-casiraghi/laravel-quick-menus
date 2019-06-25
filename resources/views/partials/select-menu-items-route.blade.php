@@ -38,14 +38,14 @@
     
     <div class="row">
         <div class="col-4">
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_name_1'),
                   'name' => 'route_param_name_1',
                   'placeholder' => '',
                   'value' => $route_param_name_1,
                   'required' => false,
             ])
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_value_1'),
                   'name' => 'route_param_value_1',
                   'placeholder' => '',
@@ -54,14 +54,14 @@
             ])
         </div>
         <div class="col-4">
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_name_2'),
                   'name' => 'route_param_name_2',
                   'placeholder' => '',
                   'value' => $route_param_name_2,
                   'required' => false,
             ])
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_value_2'),
                   'name' => 'route_param_value_2',
                   'placeholder' => '',
@@ -70,14 +70,14 @@
             ])
         </div>
         <div class="col-4">
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_name_3'),
                   'name' => 'route_param_name_3',
                   'placeholder' => '',
                   'value' => $route_param_name_3,
                   'required' => false,
             ])
-            @include('partials.forms.input', [
+            @include('laravel-quick-menus::partials.input', [
                   'title' => __('laravel-quick-menus::menuItem.route_param_value_3'),
                   'name' => 'route_param_value_3',
                   'placeholder' => '',

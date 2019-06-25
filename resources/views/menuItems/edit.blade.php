@@ -111,7 +111,7 @@
                 ])
             </div>--}}
             <div class="col-12">
-                @include('partials.forms.select-menu-items-route', [
+                @include('laravel-quick-menus::partials.select-menu-items-route', [
                     'title' => __('views.menu_item_route'),
                     'name' => 'route',
                     'placeholder' => __('views.menu_item_route'),

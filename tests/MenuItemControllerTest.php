@@ -50,9 +50,9 @@ class MenuItemControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
 
-        $this->get('menuItems/create?menuId=1')->dump();
-            //->assertViewIs('laravel-quick-menus::menuItems.create')
-            //->assertStatus(200);
+        $this->get('menuItems/create?menuId=1')
+            ->assertViewIs('laravel-quick-menus::menuItems.create')
+            ->assertStatus(200);
     }
 
     /** @test */
