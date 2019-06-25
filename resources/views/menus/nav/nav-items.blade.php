@@ -6,9 +6,9 @@
             @php 
                 $routeParams = array();
                 //array_push($routeParams, $item->param_1, $item->param_2, $item->param_3);
-                $routeParams[$item->$route_param_name_1] = $route_param_value_1;
-                $routeParams[$item->$route_param_name_2] = $route_param_value_2;
-                $routeParams[$item->$route_param_name_3] = $route_param_value_3;
+                $routeParams[$item->route_param_name_1] = $route_param_value_1;
+                $routeParams[$item->route_param_name_2] = $route_param_value_2;
+                $routeParams[$item->route_param_name_3] = $route_param_value_3;
                 $url = route($item->route,$routeParams);
             @endphp
         @break
