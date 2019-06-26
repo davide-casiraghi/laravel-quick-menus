@@ -26,9 +26,9 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-quick-menus'),
-            ], 'views');*/
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
