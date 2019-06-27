@@ -3,7 +3,8 @@
 namespace DavideCasiraghi\LaravelQuickMenus\Models;
 
 use Illuminate\Support\Facades\Auth;
-use Dimsav\Translatable\Translatable;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model

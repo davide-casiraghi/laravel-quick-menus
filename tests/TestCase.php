@@ -46,7 +46,7 @@ abstract class TestCase extends BaseTestCase
         return [
             LaravelQuickMenusServiceProvider::class,
             \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-            \Dimsav\Translatable\TranslatableServiceProvider::class,
+            \Astrotomic\Translatable\TranslatableServiceProvider::class,
         ];
     }
 
