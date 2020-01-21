@@ -48,16 +48,16 @@ class LaravelQuickMenusServiceProvider extends ServiceProvider
                create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php
             */
             $migrations = [
-                     'CreateMenusTable' => 'create_menus_table',
-                     'CreateMenuItemsTable' => 'create_menu_items_table',
-                     'CreateMenuItemTranslationsTable' => 'create_menu_item_translations_table',
-                 ];
+                'CreateMenusTable' => 'create_menus_table',
+                'CreateMenuItemsTable' => 'create_menu_items_table',
+                'CreateMenuItemTranslationsTable' => 'create_menu_item_translations_table',
+            ];
 
             foreach ($migrations as $migrationFunctionName => $migrationFileName) {
                 if (! class_exists($migrationFunctionName)) {
                     $this->publishes([
-                             __DIR__.'/../database/migrations/'.$migrationFileName.'.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_'.$migrationFileName.'.php'),
-                         ], 'migrations');
+                        __DIR__.'/../database/migrations/'.$migrationFileName.'.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_'.$migrationFileName.'.php'),
+                    ], 'migrations');
                 }
             }
         }

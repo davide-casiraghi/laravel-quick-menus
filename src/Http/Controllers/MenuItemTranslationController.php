@@ -2,10 +2,10 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
-use Validator;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Validator;
 
 class MenuItemTranslationController extends Controller
 {
@@ -69,8 +69,8 @@ class MenuItemTranslationController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'name' => 'required',
-            ]);
+            'name' => 'required',
+        ]);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();

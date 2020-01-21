@@ -2,8 +2,8 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class MenuControllerTest extends TestCase
 {
@@ -16,8 +16,8 @@ class MenuControllerTest extends TestCase
     {
         $menu = factory(Menu::class)->create();
         $this->assertDatabaseHas('menus', [
-                                'id' => '1',
-                                ]);
+            'id' => '1',
+        ]);
     }
 
     /** @test */
