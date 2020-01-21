@@ -2,9 +2,9 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class MenuItemControllerTest extends TestCase
 {
@@ -16,12 +16,12 @@ class MenuItemControllerTest extends TestCase
     public function it_runs_the_test_factory()
     {
         $menuItem = factory(MenuItem::class)->create([
-                            'name' => 'Main menu',
-                        ]);
+            'name' => 'Main menu',
+        ]);
         $this->assertDatabaseHas('menu_item_translations', [
-                                'locale' => 'en',
-                                'name' => 'Main menu',
-                ]);
+            'locale' => 'en',
+            'name' => 'Main menu',
+        ]);
     }
 
     /** @test */
@@ -141,7 +141,7 @@ class MenuItemControllerTest extends TestCase
         $attributes = ([
             'menu_id' => $menu->id,
             'name' => 'test name updated',
-          ]);
+        ]);
 
         $response = $this->followingRedirects()
                          ->put('/menuItems/'.$menuItem->id, $attributes);

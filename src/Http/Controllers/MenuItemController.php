@@ -2,15 +2,15 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
-use Route;
-use Validator;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\App;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Route;
+use Validator;
 
 class MenuItemController extends Controller
 {

@@ -2,10 +2,10 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItem;
 use DavideCasiraghi\LaravelQuickMenus\Models\MenuItemTranslation;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class MenuItemTranslationControllerTest extends TestCase
 {
@@ -33,9 +33,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $data = [
             'menu_item_id' => $menuItem->id,
@@ -59,9 +59,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $response = $this
             ->followingRedirects()
@@ -76,9 +76,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItemTranslation::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $data = [
             'menu_item_id' => $menuItem->id,
@@ -103,9 +103,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItem::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $data = [
             'menu_item_id' => $menuItem->id,
@@ -125,7 +125,7 @@ class MenuItemTranslationControllerTest extends TestCase
             'language_code' => 'es',
             'menu_item_id' => 1,
             'selected_menu_id' => 1,
-          ]);
+        ]);
         $response = $this->followingRedirects()
                          ->put('/menuItemTranslations/update', $attributes);
 
@@ -140,9 +140,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItem::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $data = [
             'menu_item_id' => $menuItem->id,
@@ -166,9 +166,9 @@ class MenuItemTranslationControllerTest extends TestCase
         $selectedMenuId = 1;
         $menu = factory(Menu::class)->create();
         $menuItem = factory(MenuItem::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+            'name' => 'Regular Jams',
+            'slug' => 'regular-jams',
+        ]);
 
         $data = [
             'menu_item_id' => $menuItem->id,

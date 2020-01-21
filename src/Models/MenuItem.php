@@ -2,9 +2,9 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Models;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class MenuItem extends Model
 {
