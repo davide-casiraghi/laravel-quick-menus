@@ -2,9 +2,9 @@
 
 namespace DavideCasiraghi\LaravelQuickMenus\Http\Controllers;
 
-use Validator;
-use Illuminate\Http\Request;
 use DavideCasiraghi\LaravelQuickMenus\Models\Menu;
+use Illuminate\Http\Request;
+use Validator;
 
 class MenuController extends Controller
 {
@@ -52,8 +52,8 @@ class MenuController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'name' => 'required',
-            ]);
+            'name' => 'required',
+        ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
